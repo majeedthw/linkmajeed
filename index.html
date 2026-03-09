@@ -3,276 +3,568 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>عبدالمجيد الثويني | روابط</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>عبدالمجيد الثويني | الروابط</title>
+  <meta name="description" content="روابط عبدالمجيد الثويني - التصوير، التقنية، التصميم، وحسابات التواصل." />
+  <meta name="theme-color" content="#0b1020" />
+  <link rel="apple-touch-icon" href="apple-icon.png">
+  <link rel="icon" href="majeed_favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* الإعدادات الأساسية */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    :root{
+      --bg-1:#050816;
+      --bg-2:#0b1020;
+      --bg-3:#121a33;
+      --card:rgba(255,255,255,.08);
+      --card-strong:rgba(255,255,255,.12);
+      --text:#f7f9ff;
+      --muted:#b8c2e3;
+      --line:rgba(255,255,255,.12);
+      --accent:#69a7ff;
+      --accent-2:#8b5cf6;
+      --shadow:0 20px 60px rgba(0,0,0,.35);
+      --radius:24px;
+      --radius-sm:18px;
+      --max:760px;
     }
 
-    body {
-      font-family: 'Cairo', sans-serif;
-      color: #ffffff;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      overflow-x: hidden;
-      /* خلفية متدرجة متحركة وعصرية */
-      background: linear-gradient(-45deg, #0a0a0a, #1a1a2e, #16213e, #0f3460);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:"Cairo",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(105,167,255,.15), transparent 25%),
+        radial-gradient(circle at 80% 0%, rgba(139,92,246,.14), transparent 26%),
+        linear-gradient(180deg, var(--bg-1), var(--bg-2) 55%, #060913);
+      overflow-x:hidden;
     }
 
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background-image:
+        radial-gradient(circle at 15% 25%, rgba(255,255,255,.18) 0 1px, transparent 1.4px),
+        radial-gradient(circle at 72% 38%, rgba(255,255,255,.14) 0 1px, transparent 1.4px),
+        radial-gradient(circle at 60% 75%, rgba(255,255,255,.12) 0 1px, transparent 1.4px),
+        radial-gradient(circle at 35% 85%, rgba(255,255,255,.12) 0 1px, transparent 1.4px);
+      background-size: 280px 280px, 320px 320px, 240px 240px, 360px 360px;
+      opacity:.45;
+      animation:drift 28s linear infinite;
     }
 
-    /* الحاوية الزجاجية (Glassmorphism) */
-    .container {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 24px;
-      padding: 40px 20px 20px;
-      width: 100%;
-      max-width: 450px;
-      text-align: center;
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-      animation: fadeIn 1s ease-out forwards;
-      position: relative; /* مهم لزر المشاركة */
+    @keyframes drift{
+      from{transform:translateY(0)}
+      50%{transform:translateY(-10px)}
+      to{transform:translateY(0)}
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .page{
+      width:min(calc(100% - 28px), var(--max));
+      margin-inline:auto;
+      padding:28px 0 38px;
+      position:relative;
+      z-index:1;
     }
 
-    /* زر المشاركة (Share Button) */
-    .share-btn {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: white;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 16px;
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.1), rgba(255,255,255,.04));
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-radius:32px;
+      box-shadow:var(--shadow);
+      padding:28px 22px 22px;
+      isolation:isolate;
+      animation:rise .9s ease both;
     }
 
-    .share-btn:hover {
-      background: rgba(79, 172, 254, 0.3);
-      transform: scale(1.1);
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:auto -60px -80px auto;
+      width:220px;
+      height:220px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(105,167,255,.22), transparent 70%);
+      z-index:-1;
+      filter:blur(8px);
     }
 
-    /* صورة الملف الشخصي */
-    .profile-img {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid transparent;
-      background: linear-gradient(#1a1a2e, #1a1a2e) padding-box, 
-                  linear-gradient(45deg, #00f2fe, #4facfe) border-box;
-      box-shadow: 0 0 20px rgba(79, 172, 254, 0.4);
-      margin-bottom: 15px;
-      transition: transform 0.3s ease;
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom:18px;
     }
 
-    .profile-img:hover {
-      transform: scale(1.05) rotate(2deg);
+    .status{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:999px;
+      color:var(--muted);
+      font-size:.95rem;
+      width:max-content;
+      backdrop-filter: blur(10px);
     }
 
-    /* النصوص */
-    h1 {
-      font-size: 24px;
-      font-weight: 800;
-      margin-bottom: 5px;
-      background: linear-gradient(45deg, #fff, #4facfe);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:#61ffa8;
+      box-shadow:0 0 14px #61ffa8;
+      flex:none;
     }
 
-    p.bio {
-      font-size: 14px;
-      color: #b0b0c0;
-      line-height: 1.8;
-      margin-bottom: 30px;
-      font-weight: 600;
+    .theme-btn{
+      border:1px solid rgba(255,255,255,.1);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      cursor:pointer;
+      font-size:1rem;
+      transition:.25s ease;
+    }
+    .theme-btn:hover{transform:translateY(-2px); background:rgba(255,255,255,.1)}
+    .theme-btn:focus-visible,
+    .link-card:focus-visible,
+    .chip:focus-visible{
+      outline:2px solid var(--accent);
+      outline-offset:3px;
     }
 
-    .bio span {
-      display: inline-block;
-      margin: 0 5px;
+    .hero-main{
+      display:grid;
+      grid-template-columns: 116px 1fr;
+      gap:18px;
+      align-items:center;
     }
 
-    /* الروابط والأزرار */
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 20px;
+    .avatar-wrap{
+      position:relative;
+      width:116px;
+      height:116px;
     }
 
-    .link-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: 100%;
-      padding: 15px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.05);
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: 600;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      opacity: 0;
-      animation: slideUpFade 0.6s ease forwards;
+    .avatar-wrap::before{
+      content:"";
+      position:absolute;
+      inset:-7px;
+      border-radius:50%;
+      background:conic-gradient(from 120deg, var(--accent), var(--accent-2), #7dd3fc, var(--accent));
+      filter:blur(.2px);
+      animation:spin 10s linear infinite;
     }
 
-    .link-btn:hover {
-      background: rgba(79, 172, 254, 0.15);
-      border-color: #4facfe;
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(79, 172, 254, 0.2);
+    @keyframes spin{
+      to{transform:rotate(1turn)}
     }
 
-    .link-btn i {
-      font-size: 20px;
-      position: absolute;
-      right: 20px;
-      color: #4facfe;
+    .avatar{
+      position:relative;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:50%;
+      border:4px solid rgba(10,15,30,.95);
+      background:#0e1325;
+      box-shadow:0 14px 30px rgba(0,0,0,.35);
+      display:block;
     }
 
-    /* توقيت متسلسل للروابط */
-    .link-btn:nth-child(1) { animation-delay: 0.1s; }
-    .link-btn:nth-child(2) { animation-delay: 0.2s; }
-    .link-btn:nth-child(3) { animation-delay: 0.3s; }
-    .link-btn:nth-child(4) { animation-delay: 0.4s; }
-    .link-btn:nth-child(5) { animation-delay: 0.5s; }
-    .link-btn:nth-child(6) { animation-delay: 0.6s; }
-    .link-btn:nth-child(7) { animation-delay: 0.7s; }
-    .link-btn:nth-child(8) { animation-delay: 0.8s; }
-    .link-btn:nth-child(9) { animation-delay: 0.9s; }
-    .link-btn:nth-child(10) { animation-delay: 1.0s; }
-
-    @keyframes slideUpFade {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    h1{
+      margin:0 0 8px;
+      font-size:clamp(1.75rem, 4.8vw, 2.45rem);
+      line-height:1.1;
+      font-weight:800;
+      letter-spacing:.2px;
     }
 
-    /* اللوجو غير القابل للحفظ */
-    .un-saveable-logo {
-      width: 60px; /* حجم اللوجو */
-      opacity: 0.4; /* شفافية عشان يندمج كعلامة مائية */
-      margin-top: 10px;
-      transition: opacity 0.3s ease;
-      
-      /* الحيل السحرية لمنع الحفظ السهل */
-      pointer-events: none; /* يمنع الضغط بالماوس نهائياً */
-      user-select: none; /* يمنع التحديد */
-      -webkit-user-drag: none; /* يمنع السحب والإفلات */
+    .subtitle{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:1.02rem;
+      line-height:1.8;
     }
 
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .chip{
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:.94rem;
+      transition:.22s ease;
+    }
+
+    .chip:hover{
+      transform:translateY(-2px);
+      background:rgba(255,255,255,.1);
+    }
+
+    .section{
+      margin-top:18px;
+      animation:rise .9s ease both;
+      animation-delay:.08s;
+    }
+
+    .section-card{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      padding:18px;
+    }
+
+    .section-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:14px;
+    }
+
+    .section-title h2{
+      margin:0;
+      font-size:1.08rem;
+      font-weight:800;
+    }
+
+    .section-title p{
+      margin:0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .links-grid{
+      display:grid;
+      gap:12px;
+    }
+
+    .link-card{
+      position:relative;
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: 54px 1fr auto;
+      align-items:center;
+      gap:14px;
+      text-decoration:none;
+      color:var(--text);
+      padding:14px;
+      border-radius:22px;
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.08);
+      transition:transform .22s ease, background .22s ease, border-color .22s ease, box-shadow .22s ease;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.02);
+    }
+
+    .link-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg, rgba(105,167,255,.12), transparent 45%, rgba(139,92,246,.12));
+      opacity:0;
+      transition:.25s ease;
+      pointer-events:none;
+    }
+
+    .link-card:hover{
+      transform:translateY(-3px) scale(1.005);
+      border-color:rgba(105,167,255,.35);
+      background:linear-gradient(180deg, rgba(255,255,255,.1), rgba(255,255,255,.05));
+      box-shadow:0 18px 30px rgba(0,0,0,.18);
+    }
+
+    .link-card:hover::before{opacity:1}
+
+    .icon{
+      width:54px;
+      height:54px;
+      display:grid;
+      place-items:center;
+      border-radius:18px;
+      font-size:1.45rem;
+      background:linear-gradient(135deg, rgba(105,167,255,.18), rgba(139,92,246,.18));
+      border:1px solid rgba(255,255,255,.1);
+    }
+
+    .meta strong{
+      display:block;
+      font-size:1rem;
+      margin-bottom:2px;
+    }
+
+    .meta span{
+      color:var(--muted);
+      font-size:.92rem;
+    }
+
+    .arrow{
+      font-size:1.25rem;
+      color:var(--muted);
+      transition:transform .22s ease, color .22s ease;
+    }
+    .link-card:hover .arrow{
+      transform:translateX(-4px);
+      color:var(--text);
+    }
+
+    .footer{
+      text-align:center;
+      color:var(--muted);
+      margin-top:16px;
+      font-size:.92rem;
+      padding-bottom:8px;
+    }
+
+    @keyframes rise{
+      from{opacity:0; transform:translateY(18px)}
+      to{opacity:1; transform:translateY(0)}
+    }
+
+    @media (max-width: 720px){
+      .page{width:min(calc(100% - 18px), var(--max)); padding-top:18px}
+      .hero{padding:18px 15px 15px; border-radius:26px}
+      .hero-main{
+        grid-template-columns:1fr;
+        text-align:center;
+        justify-items:center;
+      }
+      .topbar{align-items:flex-start}
+      .chips{justify-content:center}
+      .section-card{padding:14px}
+      .link-card{
+        grid-template-columns:50px 1fr auto;
+        padding:12px;
+        border-radius:18px;
+      }
+      .icon{
+        width:50px;
+        height:50px;
+        border-radius:16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *, *::before, *::after{
+        animation:none !important;
+        transition:none !important;
+        scroll-behavior:auto !important;
+      }
+    }
+
+    body.light{
+      --bg-1:#eef4ff;
+      --bg-2:#edf2ff;
+      --bg-3:#dfe8ff;
+      --card:rgba(255,255,255,.78);
+      --card-strong:rgba(255,255,255,.86);
+      --text:#101828;
+      --muted:#5d6785;
+      --line:rgba(18,24,40,.08);
+      --shadow:0 18px 40px rgba(42,53,84,.12);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(105,167,255,.18), transparent 25%),
+        radial-gradient(circle at 80% 0%, rgba(139,92,246,.12), transparent 26%),
+        linear-gradient(180deg, #f6f9ff, #edf2ff 55%, #e7eeff);
+    }
+    body.light::before{opacity:.24}
   </style>
 </head>
 <body>
+  <main class="page">
+    <section class="hero">
+      <div class="topbar">
+        <div class="status" aria-label="الحالة الحالية">
+          <span class="dot" aria-hidden="true"></span>
+          <span>متواجد على الإنترنت</span>
+        </div>
 
-  <div class="container">
-    
-    <button class="share-btn" onclick="sharePage()" title="مشاركة الصفحة">
-      <i class="fa-solid fa-share-nodes"></i>
-    </button>
+        <button class="theme-btn" id="themeToggle" aria-label="تبديل المظهر">☾</button>
+      </div>
 
-    <img src="profile1.jpg" alt="عبدالمجيد الثويني" class="profile-img">
-    
-    <h1>عبدالمجيد الثويني</h1>
-    
-    <p class="bio">
-      حائل📍 <span>•</span> 
-      عاشق للتصوير 📸 <span>•</span> <br>
-      مهتم بالتكنولوجيا 👨‍💻 <span>•</span> 
-      مصمم 3D مبتدئ 💻
-    </p>
+      <div class="hero-main">
+        <div class="avatar-wrap">
+          <img src="profile1.jpg" alt="صورة عبدالمجيد الثويني" class="avatar">
+        </div>
 
-    <div class="links">
-      <a href="https://www.tiktok.com/@majeedthw" target="_blank" class="link-btn">
-        <i class="fa-brands fa-tiktok"></i> تيك توك
-      </a>
-      <a href="https://www.instagram.com/majeedthw" target="_blank" class="link-btn">
-        <i class="fa-brands fa-instagram"></i> انستغرام
-      </a>
-      <a href="https://www.youtube.com/@majeedthw" target="_blank" class="link-btn">
-        <i class="fa-brands fa-youtube"></i> يوتيوب
-      </a>
-      <a href="https://www.facebook.com/share/1BDae5WGRH/?mibextid=wwXIfr" target="_blank" class="link-btn">
-        <i class="fa-brands fa-facebook-f"></i> فيسبوك
-      </a>
-      <a href="https://x.com/majeedthw" target="_blank" class="link-btn">
-        <i class="fa-brands fa-x-twitter"></i> إكس (تويتر)
-      </a>
-      <a href="https://snapchat.com/t/5VwWmTSe" target="_blank" class="link-btn">
-        <i class="fa-brands fa-snapchat"></i> سناب شات
-      </a>
-      <a href="https://time.majeedthw.com" target="_blank" class="link-btn">
-        <i class="fa-solid fa-clock"></i> محول الوقت
-      </a>
-      <a href="https://age.majeedthw.com" target="_blank" class="link-btn">
-        <i class="fa-solid fa-calculator"></i> حاسبة العمر
-      </a>
-      <a href="https://www.linkedin.com/in/abdulmajeed-althuwaini-977b413a0" target="_blank" class="link-btn">
-        <i class="fa-brands fa-linkedin-in"></i> لينكد إن
-      </a>
-      <a href="mailto:a@majeedthw.com" target="_blank" class="link-btn">
-        <i class="fa-solid fa-envelope"></i> تواصل عبر الإيميل
-      </a>
-    </div>
+        <div>
+          <h1>عبدالمجيد الثويني</h1>
+          <p class="subtitle">
+            من حائل 📍 — أحب التصوير والتقنية والتصميم ثلاثي الأبعاد، وهذه أهم روابطي في مكان واحد.
+          </p>
 
-    <img src="image.png" alt="Logo" class="un-saveable-logo" oncontextmenu="return false;" draggable="false">
+          <div class="chips">
+            <a class="chip" href="mailto:a@majeedthw.com">✉️ تواصل مباشر</a>
+            <a class="chip" href="https://www.linkedin.com/in/abdulmajeed-althuwaini-977b413a0?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">💼 لينكدإن</a>
+            <a class="chip" href="https://x.com/majeedthw" target="_blank" rel="noopener noreferrer">𝕏 X</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  </div>
+    <section class="section">
+      <div class="section-card">
+        <div class="section-title">
+          <div>
+            <h2>روابط التواصل والمنصات</h2>
+            <p>واجهة أوضح، أسرع، وأفخم من النسخة القديمة.</p>
+          </div>
+        </div>
+
+        <div class="links-grid">
+          <a class="link-card" href="https://www.instagram.com/majeedthw" target="_blank" rel="noopener noreferrer">
+            <div class="icon">📸</div>
+            <div class="meta">
+              <strong>إنستغرام</strong>
+              <span>@majeedthw</span>
+            </div>
+            <div class="arrow">‹</div>
+          </a>
+
+          <a class="link-card" href="https://www.tiktok.com/@majeedthw" target="_blank" rel="noopener noreferrer">
+            <div class="icon">🎵</div>
+            <div class="meta">
+              <strong>تيك توك</strong>
+              <span>مقاطع قصيرة ومحتوى متنوع</span>
+            </div>
+            <div class="arrow">‹</div>
+          </a>
+
+          <a class="link-card" href="https://www.youtube.com/@majeedthw" target="_blank" rel="noopener noreferrer">
+            <div class="icon">▶️</div>
+            <div class="meta">
+              <strong>يوتيوب</strong>
+              <span>فيديوهات ومحتوى مرئي</span>
+            </div>
+            <div class="arrow">‹</div>
+          </a>
+
+          <a class="link-card" href="https://snapchat.com/t/5VwWmTSe" target="_blank" rel="noopener noreferrer">
+            <div class="icon">👻</div>
+            <div class="meta">
+              <strong>سناب شات</strong>
+              <span>لقطات يومية وتواصل سريع</span>
+            </div>
+            <div class="arrow">‹</div>
+          </a>
+
+          <a class="link-card" href="https://x.com/majeedthw" target="_blank" rel="noopener noreferrer">
+            <div class="icon">𝕏</div>
+            <div class="meta">
+              <strong>X</strong>
+              <span>تحديثات سريعة وآراء</span>
+            </div>
+            <div class="arrow">‹</div>
+          </a>
+
+          <a class="link-card" href="https://www.linkedin.com/in/abdulmajeed-althuwaini-977b413a0?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">
+            <div class="icon">💼</div>
+            <div class="meta">
+              <strong>لينكدإن</strong>
+              <span>الجانب المهني والخبرات</span>
+            </div>
+            <div class="arrow">‹</div>
+          </a>
+
+          <a class="link-card" href="https://www.facebook.com/share/1BDae5WGRH/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+            <div class="icon">📘</div>
+            <div class="meta">
+              <strong>فيسبوك</strong>
+              <span>الحساب الشخصي</span>
+            </div>
+            <div class="arrow">‹</div>
+          </a>
+
+          <a class="link-card" href="mailto:a@majeedthw.com">
+            <div class="icon">✉️</div>
+            <div class="meta">
+              <strong>البريد الإلكتروني</strong>
+              <span>a@majeedthw.com</span>
+            </div>
+            <div class="arrow">‹</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-card">
+        <div class="section-title">
+          <div>
+            <h2>أدوات مفيدة</h2>
+            <p>روابطك الخاصة بشكل مرتب ومميز.</p>
+          </div>
+        </div>
+
+        <div class="links-grid">
+          <a class="link-card" href="https://time.majeedthw.com" target="_blank" rel="noopener noreferrer">
+            <div class="icon">🕒</div>
+            <div class="meta">
+              <strong>محول الوقت</strong>
+              <span>تحويل الوقت بين المناطق بسهولة</span>
+            </div>
+            <div class="arrow">‹</div>
+          </a>
+
+          <a class="link-card" href="https://age.majeedthw.com" target="_blank" rel="noopener noreferrer">
+            <div class="icon">🎂</div>
+            <div class="meta">
+              <strong>حاسبة العمر</strong>
+              <span>احسب العمر بسرعة وبدقة</span>
+            </div>
+            <div class="arrow">‹</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer">صُممت بعناية لتكون أخف، أجمل، وأوضح على الجوال والكمبيوتر ✨</p>
+  </main>
 
   <script>
-    function sharePage() {
-      // إذا كان المتصفح يدعم خاصية المشاركة (مثل متصفحات الجوال)
-      if (navigator.share) {
-        navigator.share({
-          title: 'روابط عبدالمجيد الثويني',
-          text: 'شاهد جميع حساباتي وروابطي من هنا!',
-          url: window.location.href,
-        })
-        .catch((error) => console.log('تم إلغاء المشاركة', error));
-      } else {
-        // إذا كان المتصفح لا يدعم (مثل بعض متصفحات الكمبيوتر)، ننسخ الرابط
-        navigator.clipboard.writeText(window.location.href).then(() => {
-          alert("تم نسخ الرابط بنجاح! يمكنك الآن لصقه في أي مكان.");
-        });
-      }
-    }
-  </script>
+    const body = document.body;
+    const btn = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('theme-mode');
 
+    if (savedTheme === 'light') {
+      body.classList.add('light');
+      btn.textContent = '☀';
+    } else {
+      btn.textContent = '☾';
+    }
+
+    btn.addEventListener('click', () => {
+      body.classList.toggle('light');
+      const isLight = body.classList.contains('light');
+      localStorage.setItem('theme-mode', isLight ? 'light' : 'dark');
+      btn.textContent = isLight ? '☀' : '☾';
+    });
+  </script>
 </body>
 </html>
