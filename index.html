@@ -1,44 +1,35 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <link rel="apple-touch-icon" href="apple-icon.png">
-  <link rel="icon" href="majeed_favicon.ico" type="image/x-icon">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>عبدالمجيد الثويني</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <title>عبدالمجيد الثويني | روابط</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
-    html, body {
+    /* الإعدادات الأساسية */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background: black;
+    }
+
+    body {
       font-family: 'Cairo', sans-serif;
-      color: white;
-    }
-
-    .container {
-      text-align: center;
-      opacity: 0;
-      animation: fadeIn 1.2s ease 1 forwards;
-      animation-delay: 0.3s;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 20px;
-    }
-
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-
-    .stars {
-      background: linear-gradient(-45deg, #0f0f0f, #1a1a2e, #2c2c54, #0f3460);
+      overflow-x: hidden;
+      /* خلفية متدرجة متحركة وعصرية */
+      background: linear-gradient(-45deg, #0a0a0a, #1a1a2e, #16213e, #0f3460);
       background-size: 400% 400%;
-      animation: gradientBG 20s ease infinite;
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      z-index: -1;
+      animation: gradientBG 15s ease infinite;
     }
 
     @keyframes gradientBG {
@@ -47,110 +38,241 @@
       100% { background-position: 0% 50%; }
     }
 
-    img.profile {
-      width: 160px;
-      height: 160px;
+    /* الحاوية الزجاجية (Glassmorphism) */
+    .container {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 40px 20px 20px;
+      width: 100%;
+      max-width: 450px;
+      text-align: center;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      animation: fadeIn 1s ease-out forwards;
+      position: relative; /* مهم لزر المشاركة */
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* زر المشاركة (Share Button) */
+    .share-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 16px;
+    }
+
+    .share-btn:hover {
+      background: rgba(79, 172, 254, 0.3);
+      transform: scale(1.1);
+    }
+
+    /* صورة الملف الشخصي */
+    .profile-img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #3d9bff;
-      box-shadow: 0 0 30px #3d9bff;
-      animation: pulse 3s ease-in-out infinite;
+      border: 3px solid transparent;
+      background: linear-gradient(#1a1a2e, #1a1a2e) padding-box, 
+                  linear-gradient(45deg, #00f2fe, #4facfe) border-box;
+      box-shadow: 0 0 20px rgba(79, 172, 254, 0.4);
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
     }
 
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+    .profile-img:hover {
+      transform: scale(1.05) rotate(2deg);
     }
 
+    /* النصوص */
     h1 {
-      margin: 20px 0 10px;
-      font-size: 28px;
-      color: #3d9bff;
-      text-shadow: 0 0 10px #3d9bff, 0 0 30px #3d9bff;
-      animation: glowIn 1.2s ease-out forwards;
-      opacity: 0;
-      animation-delay: 0.5s;
-    }
-
-    @keyframes glowIn {
-      0% { opacity: 0; text-shadow: none; }
-      100% { opacity: 1; text-shadow: 0 0 10px #3d9bff, 0 0 30px #3d9bff; }
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 5px;
+      background: linear-gradient(45deg, #fff, #4facfe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     p.bio {
-      color: #ccc;
-      white-space: pre-line;
-      margin-top: 10px;
-      animation: fadeIn 1.2s ease 1 forwards;
-      animation-delay: 0.7s;
-      opacity: 0;
+      font-size: 14px;
+      color: #b0b0c0;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      font-weight: 600;
     }
 
+    .bio span {
+      display: inline-block;
+      margin: 0 5px;
+    }
+
+    /* الروابط والأزرار */
     .links {
-      margin-top: 30px;
       display: flex;
       flex-direction: column;
-      gap: 15px;
-      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
     }
 
-    .links a {
-      display: block;
-      width: 90%;
-      max-width: 420px;
+    .link-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
       padding: 15px;
-      border-radius: 10px;
-      background: #1c1c1c;
-      color: #3d9bff;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #ffffff;
       text-decoration: none;
-      font-weight: bold;
-      border: 1px solid #3d9bff;
+      font-size: 16px;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
-      animation: fadeInUp 0.8s ease forwards;
       opacity: 0;
+      animation: slideUpFade 0.6s ease forwards;
     }
 
-    .links a:nth-child(1) { animation-delay: 0.9s; }
-    .links a:nth-child(2) { animation-delay: 1.1s; }
-    .links a:nth-child(3) { animation-delay: 1.3s; }
-    .links a:nth-child(4) { animation-delay: 1.5s; }
-    .links a:nth-child(5) { animation-delay: 1.7s; }
-    .links a:nth-child(6) { animation-delay: 1.9s; }
-    .links a:nth-child(7) { animation-delay: 2.1s; }
-    .links a:nth-child(8) { animation-delay: 2.3s; }
-    .links a:nth-child(9) { animation-delay: 2.5s; }
-    .links a:nth-child(10) { animation-delay: 2.7s; }
+    .link-btn:hover {
+      background: rgba(79, 172, 254, 0.15);
+      border-color: #4facfe;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(79, 172, 254, 0.2);
+    }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
+    .link-btn i {
+      font-size: 20px;
+      position: absolute;
+      right: 20px;
+      color: #4facfe;
+    }
+
+    /* توقيت متسلسل للروابط */
+    .link-btn:nth-child(1) { animation-delay: 0.1s; }
+    .link-btn:nth-child(2) { animation-delay: 0.2s; }
+    .link-btn:nth-child(3) { animation-delay: 0.3s; }
+    .link-btn:nth-child(4) { animation-delay: 0.4s; }
+    .link-btn:nth-child(5) { animation-delay: 0.5s; }
+    .link-btn:nth-child(6) { animation-delay: 0.6s; }
+    .link-btn:nth-child(7) { animation-delay: 0.7s; }
+    .link-btn:nth-child(8) { animation-delay: 0.8s; }
+    .link-btn:nth-child(9) { animation-delay: 0.9s; }
+    .link-btn:nth-child(10) { animation-delay: 1.0s; }
+
+    @keyframes slideUpFade {
+      from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    /* اللوجو غير القابل للحفظ */
+    .un-saveable-logo {
+      width: 60px; /* حجم اللوجو */
+      opacity: 0.4; /* شفافية عشان يندمج كعلامة مائية */
+      margin-top: 10px;
+      transition: opacity 0.3s ease;
+      
+      /* الحيل السحرية لمنع الحفظ السهل */
+      pointer-events: none; /* يمنع الضغط بالماوس نهائياً */
+      user-select: none; /* يمنع التحديد */
+      -webkit-user-drag: none; /* يمنع السحب والإفلات */
+    }
+
   </style>
 </head>
 <body>
-  <div class="stars"></div>
+
   <div class="container">
-    <img src="profile1.jpg" alt="عبدالمجيد الثويني" class="profile">
+    
+    <button class="share-btn" onclick="sharePage()" title="مشاركة الصفحة">
+      <i class="fa-solid fa-share-nodes"></i>
+    </button>
+
+    <img src="profile1.jpg" alt="عبدالمجيد الثويني" class="profile-img">
+    
     <h1>عبدالمجيد الثويني</h1>
-    <p class="bio">عبدالمجيد الثويني
-حائل📍
-عاشق للتصوير 📸
-مهتم بالتكنولوجيا 👨‍💻
-مصمم 3D مبتدئ 💻</p>
+    
+    <p class="bio">
+      حائل📍 <span>•</span> 
+      عاشق للتصوير 📸 <span>•</span> <br>
+      مهتم بالتكنولوجيا 👨‍💻 <span>•</span> 
+      مصمم 3D مبتدئ 💻
+    </p>
+
     <div class="links">
-      <a href="https://www.tiktok.com/@majeedthw" target="_blank">تيك توك | TIKTOK</a>
-      <a href="https://www.instagram.com/majeedthw" target="_blank">انستغرام | INSTAGRAM</a>
-      <a href="https://www.youtube.com/@majeedthw" target="_blank">يوتيوب | YOUTUBE</a>
-      <a href="https://www.facebook.com/share/1BDae5WGRH/?mibextid=wwXIfr" target="_blank">فيسبوك | FACEBOOK</a> 
-      <a href="https://x.com/majeedthw" target="_blank">اكس (تويتر سابقًا) | X (FORMALLY TWITTER)</a>
-      <a href="https://snapchat.com/t/5VwWmTSe" target="_blank">سناب شات | SNAPCHAT</a>
-      <a href="https://time.majeedthw.com" target="_blank">محول الوقت | TIME CONVERTER</a>
-      <a href="https://age.majeedthw.com" target="_blank">حاسبة العمر | AGE CALCULATOR</a>
-      <a href="mailto:a@majeedthw.com" target="_blank">الايميل | EMAIL</a>
-      <a href="https://www.linkedin.com/in/abdulmajeed-althuwaini-977b413a0?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank"> لينكدان | LINKEDIN</a>
+      <a href="https://www.tiktok.com/@majeedthw" target="_blank" class="link-btn">
+        <i class="fa-brands fa-tiktok"></i> تيك توك
+      </a>
+      <a href="https://www.instagram.com/majeedthw" target="_blank" class="link-btn">
+        <i class="fa-brands fa-instagram"></i> انستغرام
+      </a>
+      <a href="https://www.youtube.com/@majeedthw" target="_blank" class="link-btn">
+        <i class="fa-brands fa-youtube"></i> يوتيوب
+      </a>
+      <a href="https://www.facebook.com/share/1BDae5WGRH/?mibextid=wwXIfr" target="_blank" class="link-btn">
+        <i class="fa-brands fa-facebook-f"></i> فيسبوك
+      </a>
+      <a href="https://x.com/majeedthw" target="_blank" class="link-btn">
+        <i class="fa-brands fa-x-twitter"></i> إكس (تويتر)
+      </a>
+      <a href="https://snapchat.com/t/5VwWmTSe" target="_blank" class="link-btn">
+        <i class="fa-brands fa-snapchat"></i> سناب شات
+      </a>
+      <a href="https://time.majeedthw.com" target="_blank" class="link-btn">
+        <i class="fa-solid fa-clock"></i> محول الوقت
+      </a>
+      <a href="https://age.majeedthw.com" target="_blank" class="link-btn">
+        <i class="fa-solid fa-calculator"></i> حاسبة العمر
+      </a>
+      <a href="https://www.linkedin.com/in/abdulmajeed-althuwaini-977b413a0" target="_blank" class="link-btn">
+        <i class="fa-brands fa-linkedin-in"></i> لينكد إن
+      </a>
+      <a href="mailto:a@majeedthw.com" target="_blank" class="link-btn">
+        <i class="fa-solid fa-envelope"></i> تواصل عبر الإيميل
+      </a>
     </div>
+
+    <img src="image.png" alt="Logo" class="un-saveable-logo" oncontextmenu="return false;" draggable="false">
+
   </div>
+
+  <script>
+    function sharePage() {
+      // إذا كان المتصفح يدعم خاصية المشاركة (مثل متصفحات الجوال)
+      if (navigator.share) {
+        navigator.share({
+          title: 'روابط عبدالمجيد الثويني',
+          text: 'شاهد جميع حساباتي وروابطي من هنا!',
+          url: window.location.href,
+        })
+        .catch((error) => console.log('تم إلغاء المشاركة', error));
+      } else {
+        // إذا كان المتصفح لا يدعم (مثل بعض متصفحات الكمبيوتر)، ننسخ الرابط
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          alert("تم نسخ الرابط بنجاح! يمكنك الآن لصقه في أي مكان.");
+        });
+      }
+    }
+  </script>
+
 </body>
 </html>
